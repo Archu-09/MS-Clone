@@ -1,3 +1,5 @@
+/* it is something going to be like a chat bubble that we sent a message */
+
 const MyMessage = ({ message }) => {
     if (message.attachments && message.attachments.length > 0) {
       return (

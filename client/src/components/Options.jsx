@@ -6,8 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { SocketContext } from '../SocketContext';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
+const useStyles = makeStyles((theme) => ({        /* styling for the option box or, form which contains account
+                                                 info of a user, meeting ID, password, and joining a call options*/
+  root: {                                         
     display: 'flex',
     flexDirection: 'column',
   },
@@ -52,7 +53,7 @@ const Options = ({ children }) => {
               <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth />
               <CopyToClipboard text={me} className={classes.margin}>
                 <Button variant="contained" color="primary" fullWidth startIcon={<Assignment fontSize="large" />}>
-                  Meeting ID
+                  Meeting ID    
                 </Button>
               </CopyToClipboard>
             </Grid>
@@ -68,7 +69,7 @@ const Options = ({ children }) => {
                   Join
                 </Button>
               )}
-            </Grid>
+            </Grid> 
           </Grid>
         </form>
         {children}
@@ -78,3 +79,14 @@ const Options = ({ children }) => {
 };
 
 export default Options;
+
+
+/* there are 3 buttons available in this option form : 1. Meeting ID button which will generate or, copy a 
+  new password in every new meeting, for this we have installed react-copy-to-clipboard library.
+
+  2. Leave meeting button: if the condition that if call is accepted and not ended yet will show this option of
+   leaving a call.
+
+  3. Join button if the above mentioned condition is not true then this option will be available there in 
+  the option box. */
+  

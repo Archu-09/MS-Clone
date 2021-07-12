@@ -1,3 +1,5 @@
+/* here we will use all the three components (MyMessage, MessageForm, TheirMessage) inside the chat feed */
+
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';

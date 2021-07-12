@@ -12,6 +12,8 @@ import LoginForm from './components/LoginForm';
 
 import './styles.css';
 
+/* this application consists of a login form, one line heading, video player, option box and chat feed*/
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     margin: '30px 100px',
@@ -68,5 +70,6 @@ const App = () => {
 
 export default App;
 
-
-
+/* all the great features of chat feed has been made possible because of chat-engine. Chat-engine uses sockets 
+behind the scene and allows you to create simple chat application in just few lines of code, it also allows
+complete customization of absolutely any part of the application */

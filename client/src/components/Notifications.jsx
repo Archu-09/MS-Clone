@@ -3,8 +3,8 @@ import { Button } from '@material-ui/core';
 
 import { SocketContext } from '../SocketContext';
 
-// get the notification if someone is trying to join a call
-// contain an option to answer a call
+/* will get the notification on the option form if someone will try to join a call
+ also, contain an option to answer a call i.e. admit button */ 
 
 const Notifications = () => {
   const { answerCall, call, callAccepted } = useContext(SocketContext);

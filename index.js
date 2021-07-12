@@ -1,4 +1,6 @@
-const app = require("express")();
+ /* This is our SERVER */
+
+const app = require("express")();                          
 const server = require("http").createServer(app);
 const cors = require("cors");
 

@@ -1,3 +1,10 @@
+
+/* building all the functionality of socket.io and WebRTC
+all the logic of sockets has been put together in this file only, and it is going to be inside react Context
+and by this way everything we do in this file will be able to share with all the other components */
+
+
+
 import React, { createContext, useState, useRef, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
@@ -7,7 +14,8 @@ const projectID = 'ed54c25a-b3f9-4daf-92ff-9d2bd9cf6890';
 
 const SocketContext = createContext();
 
-const socket = io('http://localhost:5000');
+/*const socket = io('http://localhost:5000');*/
+const socket = io('https://video-chat-app-archana.herokuapp.com/');
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);

@@ -1,3 +1,5 @@
+/* this is for the other people who send the message */
+
 const TheirMessage = ({ lastMessage, message }) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
   

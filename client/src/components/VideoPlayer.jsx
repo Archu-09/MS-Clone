@@ -3,10 +3,10 @@ import { Grid, Typography, Paper, makeStyles } from '@material-ui/core';
 
 import { SocketContext } from '../SocketContext';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({         /* styling of video streaming part*/
   video: {
-    width: '450px',
-    [theme.breakpoints.down('xs')]: {
+    width: '450px',                              
+    [theme.breakpoints.down('xs')]: {            
       width: '300px',
     },
   },
@@ -29,7 +29,7 @@ const VideoPlayer = () => {
 
   return (
     <Grid container className={classes.gridContainer}>                 
-      {stream && (                                                   // Our own Video
+      {stream && (                                           /* streaming of our own video*/
         <Paper className={classes.paper}>
           <Grid item xs={12} md={6}>
             <Typography variant="h6" gutterBottom>{name || 'Name'}</Typography>
@@ -37,7 +37,7 @@ const VideoPlayer = () => {
           </Grid>
         </Paper>
       )}
-      {callAccepted && !callEnded && (                             // User's Video
+      {callAccepted && !callEnded && (               /* if the given condition is true then it will play the user's video*/
         <Paper className={classes.paper}>
           <Grid item xs={12} md={6}>
             <Typography variant="h6" gutterBottom>{call.name || 'Name'}</Typography>
@@ -49,4 +49,8 @@ const VideoPlayer = () => {
   );
 };
 
-export default VideoPlayer;
+export default VideoPlayer;   
+
+/* the default name of the users in the video player has been set to "Name", user's name will be displayed
+on the top of their video if they will typed in their name in option box otherwise, "Name" will be displayed 
+as their name. */
