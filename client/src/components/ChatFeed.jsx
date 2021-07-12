@@ -24,28 +24,28 @@ const ChatFeed = (props) => {
     const keys = Object.keys(messages);
 
     return keys.map((key, index) => {
-      const message = messages[key];
-      const lastMessageKey = index === 0 ? null : keys[index - 1];
-      const isMyMessage = userName === message.sender.username;
+      const message = messages[key];                                 /* the message*/
+      const lastMessageKey = index === 0 ? null : keys[index - 1];   /* if there are messages then it will get us the last message*/
+      const isMyMessage = userName === message.sender.username;      /* it will check if it is my mesage*/
 
       return (
         <div key={`msg_${index}`} style={{ width: '100%' }}>
           <div className="message-block">
-            {isMyMessage
+            {isMyMessage                            /* if it is our message then render MyMessage component otherwise render TheirMessage component */
               ? <MyMessage message={message} />
               : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}
           </div>
           <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>
             {renderReadReceipts(message, isMyMessage)}
           </div>
-        </div>
+        </div>               /* the chat bubble will be shown up for who read the messages (render read receipts) */ 
       );
     });
   };
 
   if (!chat) return <div />;
 
-  return (
+  return (                                    /* structure of our chat feed */
     <div className="chat-feed">
       <div className="chat-title-container">
         <div className="chat-title">{chat?.title}</div>

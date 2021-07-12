@@ -2,7 +2,7 @@
 
 const MyMessage = ({ message }) => {
     if (message.attachments && message.attachments.length > 0) {
-      return (
+      return (                                      /* it will render a image if the message is image */
         <img
           src={message.attachments[0].file}
           alt="message-attachment"
@@ -12,7 +12,8 @@ const MyMessage = ({ message }) => {
       );
     }
   
-    return (
+    return (                              /* if it is not an image then it will render a text for message */ 
+        
       <div className="message" style={{ float: 'right', marginRight: '20px', color: 'white', backgroundColor: '#5c407e' }}>
         {message.text}
       </div>

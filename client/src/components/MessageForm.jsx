@@ -15,7 +15,7 @@ const MessageForm = (props) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault();                              /* this will make sure not to refresh browser once you submit the login form */
 
     const text = value.trim();
 
@@ -23,24 +23,24 @@ const MessageForm = (props) => {
       sendMessage(creds, chatId, { text });
     }
 
-    setValue('');
+    setValue('');        
   };
 
-  const handleUpload = (event) => {
+  const handleUpload = (event) => {                                        /* file upload */
     sendMessage(creds, chatId, { files: event.target.files, text: '' });
   };
 
   return (
     <form className="message-form" onSubmit={handleSubmit}>
-      <input
+      <input                                                  /* message input box */
         className="message-input"
         placeholder="Send a message..."
         value={value}
         onChange={handleChange}
         onSubmit={handleSubmit}
-      />
-      <label htmlFor="upload-button">
-        <span className="image-button">
+      />                                                   
+      <label htmlFor="upload-button">                       
+        <span className="image-button">                      
           <PictureOutlined className="picture-icon" />
         </span>
       </label>
@@ -51,7 +51,7 @@ const MessageForm = (props) => {
         style={{ display: 'none' }}
         onChange={handleUpload.bind(this)}
       />
-      <button type="submit" className="send-button">
+      <button type="submit" className="send-button">        
         <SendOutlined className="send-icon" />
       </button>
     </form>
